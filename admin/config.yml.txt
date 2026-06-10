@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "match_center"
+    label: "Match Center (Jogos)"
+    folder: "_data/matches"
+    create: true
+    fields:
+      - {label: "Competição", name: "competicao", widget: "string"}
+      - {label: "Hora do Jogo", name: "hora", widget: "string"}
+      - {label: "Nome do Adversário", name: "adversario", widget: "string"}
+      - {label: "Local e Data", name: "local_data", widget: "string"}
+      - {label: "Golos do Adversário (Último Jogo)", name: "golos_adv", widget: "number"}
+      - {label: "Golos do SL Olivais (Último Jogo)", name: "golos_slo", widget: "number"}
+      - {label: "Marcadores dos Golos", name: "marcadores", widget: "string"}
+
+  - name: "noticias"
+    label: "Notícias"
+    folder: "_data/noticias"
+    create: true
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Categoria", name: "categoria", widget: "select", options: ["Futebol", "Futsal", "Formação", "Clube"]}
+      - {label: "Data de Publicação", name: "date", widget: "datetime"}
+      - {label: "Imagem de Destaque", name: "image", widget: "image"}
+      - {label: "Resumo", name: "description", widget: "string"}
+      - {label: "Corpo da Notícia", name: "body", widget: "markdown"}
