@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport Lisboa e Olivais - Website Oficial</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://tailwindcss.com"></script>
-    <!-- FontAwesome para Ícones -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <script>
         tailwind.config = {
@@ -32,195 +30,78 @@
 </head>
 <body class="bg-clubeCinza text-clubePreto font-sans antialiased">
 
-    <!-- 1. CABEÇALHO / NAVBAR -->
+    <!-- CABEÇALHO -->
     <header class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-clubeVermelho">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logótipo / Nome -->
             <a href="#" class="flex items-center space-x-3">
                 <div class="bg-clubeVermelho text-white p-3 rounded-full font-bold text-xl tracking-wider shadow">SLO</div>
                 <span class="font-black text-xl tracking-tight text-clubePreto hidden md:block">SL OLIVAIS</span>
             </a>
-            
-            <!-- Menu de Navegação -->
             <nav class="hidden lg:flex space-x-6 font-bold text-sm uppercase tracking-wider">
-                <a href="#" class="text-clubeVermelho hover:text-clubeVermelhoEscuro transition">Início</a>
-                <a href="#" class="text-gray-700 hover:text-clubeVermelho transition">O Clube</a>
-                <a href="#" class="text-gray-700 hover:text-clubeVermelho transition">Equipas</a>
-                <a href="#" class="text-gray-700 hover:text-clubeVermelho transition">Agenda</a>
-                <a href="#" class="text-gray-700 hover:text-clubeVermelho transition">Notícias</a>
-                <a href="#" class="text-gray-700 hover:text-clubeVermelho transition">Loja</a>
+                <a href="#" class="text-clubeVermelho">Início</a>
+                <a href="#" class="text-gray-700">O Clube</a>
+                <a href="#" class="text-gray-700">Equipas</a>
             </nav>
-
-            <!-- Botão de Sócio -->
-            <div class="flex items-center space-x-4">
-                <a href="#" class="bg-clubeVermelho hover:bg-clubeVermelhoEscuro text-white px-5 py-2.5 rounded-full font-bold text-sm uppercase tracking-wider transition transform hover:scale-105 shadow-md">
-                    <i class="fa-solid fa-user-plus mr-2"></i>Área de Sócio
-                </a>
-            </div>
+            <span class="text-sm font-bold text-gray-500"><i class="fa-solid fa-location-dot text-clubeVermelho"></i> Olivais</span>
         </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
-    <section class="hero-bg text-white py-24 md:py-40 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="bg-clubeVermelho text-xs uppercase font-extrabold tracking-widest px-4 py-1.5 rounded-full shadow-lg">Inovação e Tradição</span>
-            <h1 class="text-4xl md:text-7xl font-black tracking-tight mt-6 mb-6 uppercase">Sport Lisboa<br><span class="text-clubeVermelho">e Olivais</span></h1>
-            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-light">Juntos pelo orgulho dos Olivais. Apoia a nossa equipa rumo à vitória na nova época desportiva.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="bg-white text-clubePreto hover:bg-clubeVermelho hover:text-white px-8 py-3.5 rounded-lg font-bold uppercase text-sm tracking-wider transition shadow-lg">Últimas Notícias</a>
-                <a href="#" class="border-2 border-white hover:bg-white hover:text-clubePreto px-8 py-3.5 rounded-lg font-bold uppercase text-sm tracking-wider transition">Comprar Bilhetes</a>
-            </div>
+    <!-- HERO -->
+    <section class="hero-bg text-white py-20 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight uppercase">Sport Lisboa<br><span class="text-clubeVermelho">e Olivais</span></h1>
+            <p class="text-gray-300 mt-4">Painel de Informações Oficiais</p>
         </div>
     </section>
 
-    <!-- 3. MATCH CENTER WIDGET -->
-    <section class="container mx-auto px-4 -mt-12 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- PAINEL DINÂMICO DO GOOGLE SHEETS -->
+    <section class="container mx-auto px-4 -mt-12 relative z-10 max-w-4xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Próximo Jogo -->
-            <div class="bg-white rounded-xl shadow-xl overflow-hidden border-t-4 border-clubeVermelho p-6">
-                <div class="flex justify-between items-center border-b pb-3 mb-4">
-                    <span class="text-xs font-extrabold uppercase tracking-wider text-clubeVermelho bg-red-50 px-3 py-1 rounded"><i class="fa-solid fa-calendar-days mr-1"></i> Próximo Jogo</span>
-                    <span class="text-xs text-gray-500 font-bold uppercase">Campeonato Distrital</span>
-                </div>
-                <div class="flex justify-between items-center py-4">
-                    <div class="text-center w-1/3">
-                        <div class="w-16 h-16 bg-clubeVermelho text-white rounded-full flex items-center justify-center font-black mx-auto shadow-md">SLO</div>
-                        <p class="font-extrabold text-sm mt-2 truncate">SL Olivais</p>
-                    </div>
-                    <div class="text-center w-1/3">
-                        <p class="text-2xl font-black text-gray-400">VS</p>
-                        <p class="text-xs bg-gray-100 px-2 py-1 rounded mt-2 font-bold inline-block text-gray-600">17:00</p>
-                    </div>
-                    <div class="text-center w-1/3">
-                        <div class="w-16 h-16 bg-gray-300 text-gray-700 rounded-full flex items-center justify-center font-black mx-auto shadow-md">ADV</div>
-                        <p class="font-extrabold text-sm mt-2 truncate">Adversário</p>
-                    </div>
-                </div>
-                <div class="text-center text-xs text-gray-500 font-medium pt-3 border-t mt-2">
-                    <i class="fa-solid fa-location-dot mr-1"></i> Campo dos Olivais, Lisboa | Domingo, 14 Junho
-                </div>
+            <div class="bg-white rounded-xl shadow-xl border-t-4 border-clubeVermelho p-6 text-center">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-clubeVermelho bg-red-50 px-3 py-1 rounded inline-block mb-4"><i class="fa-solid fa-calendar"></i> Próximo Jogo</span>
+                <p id="txt-proximo" class="text-lg font-bold text-gray-800 py-2">A carregar...</p>
             </div>
 
             <!-- Último Resultado -->
-            <div class="bg-clubePreto text-white rounded-xl shadow-xl overflow-hidden p-6">
-                <div class="flex justify-between items-center border-b border-gray-800 pb-3 mb-4">
-                    <span class="text-xs font-extrabold uppercase tracking-wider text-green-400 bg-green-950 px-3 py-1 rounded"><i class="fa-solid fa-circle-check mr-1"></i> Último Resultado</span>
-                    <span class="text-xs text-gray-400 font-bold uppercase">Futsal Sénior</span>
-                </div>
-                <div class="flex justify-between items-center py-2">
-                    <div class="text-center w-1/3">
-                        <p class="font-extrabold text-sm truncate">Rival FC</p>
-                    </div>
-                    <div class="text-center w-1/3 flex justify-center items-center space-x-3">
-                        <span class="text-3xl font-black">2</span>
-                        <span class="text-xl font-bold text-clubeVermelho">-</span>
-                        <span class="text-3xl font-black text-clubeVermelho">4</span>
-                    </div>
-                    <div class="text-center w-1/3">
-                        <p class="font-extrabold text-sm text-clubeVermelho truncate">SL Olivais</p>
-                    </div>
-                </div>
-                <div class="text-center text-xs text-gray-400 pt-3 border-t border-gray-800 mt-2">
-                    Golos SLO: Silva (2), Santos (1), Costa (1)
-                </div>
+            <div class="bg-clubePreto text-white rounded-xl shadow-xl p-6 text-center">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-green-400 bg-green-950 px-3 py-1 rounded inline-block mb-4"><i class="fa-solid fa-circle-check"></i> Último Resultado</span>
+                <p id="txt-resultado" class="text-2xl font-black text-clubeVermelho py-2">A carregar...</p>
             </div>
         </div>
+
+        <!-- NOTÍCIA DESTAQUE -->
+        <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-clubeVermelho mt-6">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-gray-400 block mb-2">Última Notícia</span>
+            <p id="txt-noticia" class="text-lg font-bold text-gray-700">A carregar...</p>
+        </div>
     </section>
-    <!-- 3.5. SECÇÃO HISTÓRIA E PALMARÉS DO CLUBE -->
-    <section class="container mx-auto px-4 py-16 bg-white rounded-xl shadow-md mt-16">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-clubeVermelho font-extrabold text-xs uppercase tracking-widest block mb-2">Desde 1934</span>
-                <h2 class="text-3xl md:text-5xl font-black uppercase text-clubePreto tracking-tight">História e Palmarés</h2>
-                <p class="text-gray-500 mt-2 max-w-xl mx-auto font-light">O percurso de glória e a mística dos "Caveiras" no Futebol e no Futsal português.</p>
-            </div>
 
-            <!-- Introdução Histórica -->
-            <div class="bg-clubeCinza p-6 rounded-xl mb-12 border-l-4 border-clubeVermelho">
-                <p class="text-gray-700 leading-relaxed">
-                    Fundado a <strong class="text-clubePreto">20 de setembro de 1934</strong>, o Sport Lisboa e Olivais carrega uma mística única, sendo carinhosamente conhecido como <strong class="text-clubeVermelho">"Os Caveiras"</strong> devido à localização da sua sede histórica. No futebol de 11, detemos com grande orgulho o <strong class="text-clubePreto">recorde nacional de 18 presenças consecutivas</strong> na Terceira Divisão Nacional.
-                </p>
-            </div>
+    <!-- SCRIPT DE LIGAÇÃO AUTOMÁTICA -->
+    <script>
+        // COLA AQUI O LINK DO TEU GOOGLE SHEETS ENTRE AS ASPAS:
+        const urlFolha = "COLA_AQUI_O_TEU_LINK_DO_GOOGLE_SHEETS";
 
-            <!-- Grelha de Modalidades (Futebol vs Futsal) -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        async function obterDados() {
+            try {
+                const matches = urlFolha.match(/\/d\/([^/]+)/);
+                if (!matches) return;
+                const id = matches[1];
+                const urlJson = `https://google.com{id}/gviz/tq?tqx=out:json`;
                 
-                <!-- PALMARÉS: FUTEBOL DE 11 -->
-                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="bg-clubeVermelho text-white p-3 rounded-lg"><i class="fa-solid fa-regular fa-futbol text-xl"></i></div>
-                        <h3 class="text-xl font-black uppercase tracking-tight text-clubePreto">Futebol de 11</h3>
-                    </div>
-                    
-                    <ul class="space-y-4 text-sm text-gray-600">
-                        <li class="flex items-start"><i class="fa-solid fa-trophy text-yellow-500 mt-1 mr-3 flex-shrink-0"></i> <span><strong>Campeão da 1.ª Divisão de Honra da AF Lisboa:</strong> Época 1995/1996.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-trophy text-yellow-500 mt-1 mr-3 flex-shrink-0"></i> <span><strong>Campeão da 1.ª Divisão da AF Lisboa:</strong> Épocas 1958/1959 e 1962/1963.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-trophy text-yellow-500 mt-1 mr-3 flex-shrink-0"></i> <span><strong>Campeão da 3.ª Divisão da AF Lisboa:</strong> Épocas 1941/1942 e 1946/1947.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-award text-clubeVermelho mt-1 mr-3 flex-shrink-0"></i> <span><strong>Taça de Honra da 3.ª Divisão da AF Lisboa:</strong> Vencedor nas épocas 1983/1984 e 1988/1989.</span></li>
-                    </ul>
-
-                    <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-gray-400 font-medium">
-                        <i class="fa-solid fa-circle-info mr-1 text-clubeVermelho"></i> Recorde: 18 épocas consecutivas na 3.ª Divisão Nacional.
-                    </div>
-                </div>
-
-                <!-- PALMARÉS: FUTSAL -->
-                <div class="bg-clubePreto text-white rounded-xl p-6 shadow-sm hover:shadow-md transition relative overflow-hidden">
-                    <div class="absolute -right-6 -bottom-6 opacity-5 text-7xl font-black select-none text-white">SLO</div>
-                    
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="bg-clubeVermelho text-white p-3 rounded-lg"><i class="fa-solid fa-trophy text-xl"></i></div>
-                        <h3 class="text-xl font-black uppercase tracking-tight text-white">Futsal</h3>
-                    </div>
-                    
-                    <ul class="space-y-4 text-sm text-gray-300">
-                        <li class="flex items-start"><i class="fa-solid fa-star text-yellow-400 mt-1 mr-3 flex-shrink-0"></i> <span><strong class="text-white">Vencedor da Taça de Portugal de Futsal:</strong> Época histórica de 2003/2004.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-trophy text-gray-400 mt-1 mr-3 flex-shrink-0"></i> <span><strong>2.ª Divisão Nacional (Série B):</strong> Vencedor na época 2002/2003 e Vice-Campeão Nacional.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-trophy text-gray-400 mt-1 mr-3 flex-shrink-0"></i> <span><strong>3.ª Divisão Nacional (Série C):</strong> Vencedor na época 2000/2001 e Vice-Campeão Nacional.</span></li>
-                    </ul>
-
-                    <div class="mt-6 pt-4 border-t border-gray-800 text-xs text-gray-400">
-                        <p class="mb-1"><i class="fa-solid fa-history mr-1 text-clubeVermelho"></i> <strong>Liga SportZone (1.ª Divisão):</strong> Disputada na época 2014/2015.</p>
-                        <p class="font-light"><i class="fa-solid fa-location-dot mr-1"></i> Casa histórica: Pavilhão Municipal do Casal Vistoso (Areeiro).</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. FEED DE NOTÍCIAS -->
-    <section class="container mx-auto px-4 py-16">
-        <div class="flex justify-between items-end mb-10">
-            <div>
-                <span class="text-clubeVermelho font-extrabold text-xs uppercase tracking-widest block mb-2">Atualidade</span>
-                <h2 class="text-3xl font-black uppercase text-clubePreto tracking-tight">Notícias do Clube</h2>
-            </div>
-            <a href="#" class="text-sm font-bold text-clubeVermelho hover:text-clubeVermelhoEscuro transition uppercase tracking-wider">Ver Todas <i class="fa-solid fa-arrow-right ml-1"></i></a>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Card Notícia 1 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition duration-300">
-                <div class="h-48 bg-gray-300 relative overflow-hidden">
-                    <div class="absolute top-3 left-3 bg-clubeVermelho text-white text-xs font-bold uppercase px-3 py-1 rounded">Futebol</div>
-                    <img src="https://unsplash.com" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Notícia">
-                </div>
-                <div class="p-6">
-                    <span class="text-xs text-gray-400 font-bold"><i class="fa-regular fa-clock mr-1"></i> Hoje</span>
-                    <h3 class="font-black text-lg mt-2 mb-3 leading-snug group-hover:text-clubeVermelho transition">SL Olivais reforça plantel sénior para atacar a subida</h3>
-                    <p class="text-gray-600 text-sm line-clamp-2">O clube oficializou hoje a contratação de três novos atletas de renome para a equipa principal.</p>
-                </div>
-            </div>
-
-            <!-- Card Notícia 2 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition duration-300">
-                <div class="h-48 bg-gray-300 relative overflow-hidden">
-                    <div class="absolute top-3 left-3 bg-clubePreto text-white text-xs font-bold uppercase px-3 py-1 rounded">Formação</div>
-<!-- Secção de Contactos Atualizada -->
-<div>
-    <h4 class="text-white font-extrabold uppercase text-sm tracking-wider mb-4 border-l-4 border-clubeVermelho pl-3">Contactos</h4>
-    <p class="text-sm mb-2"><i class="fa-solid fa-location-dot mr-2 text-clubeVermelho"></i> Campo de Futebol, R. de Chibuto 1 R/C, 1800-012 Lisboa</p>
-    <p class="text-sm mb-2"><i class="fa-solid fa-envelope mr-2 text-clubeVermelho"></i> geral@slolivais.pt</p>
-    <p class="text-sm"><i class="fa-solid fa-phone mr-2 text-clubeVermelho"></i> 21 852 2466</p>
-</div>
+                const res = await fetch(urlJson);
+                const text = await res.text();
+                const json = JSON.parse(text.substring(47, text.length - 2));
+                const row = json.table.rows[0].c;
+                
+                if(row[0]) document.getElementById("txt-proximo").innerText = row[0].v;
+                if(row[1]) document.getElementById("txt-resultado").innerText = row[1].v;
+                if(row[2]) document.getElementById("txt-noticia").innerText = row[2].v;
+            } catch (e) {
+                console.error("Erro a ler o Google Sheets:", e);
+            }
+        }
+        obterDados();
+    </script>
+</body>
+</html>
