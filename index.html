@@ -4,53 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport Lisboa e Olivais - Website Oficial</title>
-    <script src="https://tailwindcss.com"></script>
+    <!-- Script de diseño corregido y forzado -->
+    <script src="https://jsdelivr.net"></script>
     <link rel="stylesheet" href="https://cloudflare.com">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clubeVermelho: '#E30613',
-                        clubeVermelhoEscuro: '#A8000B',
-                        clubePreto: '#1A1A1A',
-                        clubeCinza: '#F5F5F5'
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(26, 26, 26, 1)), url('https://unsplash.com');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(26, 26, 26, 1)), url('https://unsplash.com');
             background-size: cover;
             background-position: center;
         }
     </style>
 </head>
-<body class="bg-clubeCinza text-clubePreto font-sans antialiased">
+<body class="bg-[#F5F5F5] text-[#1A1A1A] font-sans antialiased">
 
     <!-- CABEÇALHO -->
-    <header class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-clubeVermelho">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3">
-                <div class="bg-clubeVermelho text-white p-3 rounded-full font-bold text-xl tracking-wider shadow">SLO</div>
-                <span class="font-black text-xl tracking-tight text-clubePreto hidden md:block">SL OLIVAIS</span>
+    <header class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-[#E30613]">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3 no-underline">
+                <div class="bg-[#E30613] text-white px-4 py-2 rounded-full font-black text-xl tracking-wider shadow">SLO</div>
+                <span class="font-black text-xl tracking-tight text-[#1A1A1A] hidden md:block">SL OLIVAIS</span>
             </a>
             <nav class="hidden lg:flex space-x-6 font-bold text-sm uppercase tracking-wider">
-                <a href="#" class="text-clubeVermelho">Início</a>
-                <a href="#" class="text-gray-700">O Clube</a>
-                <a href="#" class="text-gray-700">Equipas</a>
+                <a href="#" class="text-[#E30613] no-underline">Início</a>
+                <a href="#" class="text-gray-700 no-underline hover:text-[#E30613]">O Clube</a>
+                <a href="#" class="text-gray-700 no-underline hover:text-[#E30613]">Equipas</a>
             </nav>
-            <span class="text-sm font-bold text-gray-500"><i class="fa-solid fa-location-dot text-clubeVermelho"></i> Olivais</span>
+            <span class="text-sm font-bold text-gray-500"><i class="fa-solid fa-location-dot text-[#E30613] mr-1"></i> Olivais</span>
         </div>
     </header>
 
     <!-- HERO -->
-    <section class="hero-bg text-white py-20 text-center">
+    <section class="hero-bg text-white py-24 text-center">
         <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight uppercase">Sport Lisboa<br><span class="text-clubeVermelho">e Olivais</span></h1>
-            <p class="text-gray-300 mt-4">Painel de Informações Oficiais</p>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight uppercase m-0">Sport Lisboa<br><span class="text-[#E30613]">e Olivais</span></h1>
+            <p class="text-gray-300 mt-4 text-lg">Painel de Informações Oficiais</p>
         </div>
     </section>
 
@@ -58,22 +45,22 @@
     <section class="container mx-auto px-4 -mt-12 relative z-10 max-w-4xl">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Próximo Jogo -->
-            <div class="bg-white rounded-xl shadow-xl border-t-4 border-clubeVermelho p-6 text-center">
-                <span class="text-xs font-extrabold uppercase tracking-wider text-clubeVermelho bg-red-50 px-3 py-1 rounded inline-block mb-4"><i class="fa-solid fa-calendar"></i> Próximo Jogo</span>
-                <p id="txt-proximo" class="text-lg font-bold text-gray-800 py-2">A carregar...</p>
+            <div class="bg-white rounded-xl shadow-xl border-t-4 border-[#E30613] p-8 text-center">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-[#E30613] bg-red-50 px-3 py-1 rounded inline-block mb-4"><i class="fa-solid fa-calendar mr-1"></i> Próximo Jogo</span>
+                <p id="txt-proximo" class="text-xl font-bold text-gray-800 py-2 my-0">A carregar...</p>
             </div>
 
             <!-- Último Resultado -->
-            <div class="bg-clubePreto text-white rounded-xl shadow-xl p-6 text-center">
-                <span class="text-xs font-extrabold uppercase tracking-wider text-green-400 bg-green-950 px-3 py-1 rounded inline-block mb-4"><i class="fa-solid fa-circle-check"></i> Último Resultado</span>
-                <p id="txt-resultado" class="text-2xl font-black text-clubeVermelho py-2">A carregar...</p>
+            <div class="bg-[#1A1A1A] text-white rounded-xl shadow-xl p-8 text-center">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-green-400 bg-green-950 px-3 py-1 rounded inline-block mb-4"><i class="fa-solid fa-circle-check mr-1"></i> Último Resultado</span>
+                <p id="txt-resultado" class="text-3xl font-black text-[#E30613] py-2 my-0">A carregar...</p>
             </div>
         </div>
 
         <!-- NOTÍCIA DESTAQUE -->
-        <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-clubeVermelho mt-6">
+        <div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-[#E30613] mt-6">
             <span class="text-xs font-extrabold uppercase tracking-wider text-gray-400 block mb-2">Última Notícia</span>
-            <p id="txt-noticia" class="text-lg font-bold text-gray-700">A carregar...</p>
+            <p id="txt-noticia" class="text-xl font-bold text-gray-700 my-0">A carregar...</p>
         </div>
     </section>
 
@@ -85,7 +72,10 @@
         async function obterDados() {
             try {
                 const matches = urlFolha.match(/\/d\/([^/]+)/);
-                if (!matches) return;
+                if (!matches) {
+                    document.getElementById("txt-proximo").innerText = "Falta configurar o link do Sheets";
+                    return;
+                }
                 const id = matches[1];
                 const urlJson = `https://google.com{id}/gviz/tq?tqx=out:json`;
                 
@@ -99,6 +89,7 @@
                 if(row[2]) document.getElementById("txt-noticia").innerText = row[2].v;
             } catch (e) {
                 console.error("Erro a ler o Google Sheets:", e);
+                document.getElementById("txt-proximo").innerText = "Erro ao carregar dados";
             }
         }
         obterDados();
