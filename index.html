@@ -4,92 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport Lisboa e Olivais - Website Oficial</title>
-    <!-- Script de diseño corregido y forzado -->
-    <script src="https://jsdelivr.net"></script>
     <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <!-- Estilos nativos inmunes a cualquier bloqueo de Netlify -->
     <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #F5F5F5;
+            color: #1A1A1A;
+        }
+        header {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-b: 4px solid #E30613;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-box {
+            background-color: #E30613;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .club-name {
+            font-weight: 900;
+            font-size: 20px;
+            margin-left: 10px;
+        }
         .hero-bg {
             background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(26, 26, 26, 1)), url('https://unsplash.com');
             background-size: cover;
             background-position: center;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
         }
+        .hero-bg h1 {
+            font-size: 45px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .text-vermelho { color: #E30613; }
+        
+        .main-content {
+            max-width: 800px;
+            margin: -40px auto 40px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .grid-jogos {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media(min-width: 768px) {
+            .grid-jogos { grid-template-columns: 1fr 1fr; }
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card-proximo { border-top: 5px solid #E30613; }
+        .card-ultimo { background-color: #1A1A1A; color: white; }
+        
+        .badge {
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .badge-vermelho { color: #E30613; background-color: #FEE2E2; }
+        .badge-verde { color: #4ADE80; background-color: #064E3B; }
+        
+        .dinamico-txt {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .resultado-txt {
+            font-size: 32px;
+            font-weight: 900;
+            color: #E30613;
+            margin: 10px 0;
+        }
+        .card-noticia {
+            background: white;
+            border-left: 5px solid #E30613;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-top: 25px;
+        }
+        .noticia-label { color: #888; font-size: 12px; font-weight: bold; text-transform: uppercase; }
     </style>
 </head>
-<body class="bg-[#F5F5F5] text-[#1A1A1A] font-sans antialiased">
+<body>
 
     <!-- CABEÇALHO -->
-    <header class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-[#E30613]">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3 no-underline">
-                <div class="bg-[#E30613] text-white px-4 py-2 rounded-full font-black text-xl tracking-wider shadow">SLO</div>
-                <span class="font-black text-xl tracking-tight text-[#1A1A1A] hidden md:block">SL OLIVAIS</span>
-            </a>
-            <nav class="hidden lg:flex space-x-6 font-bold text-sm uppercase tracking-wider">
-                <a href="#" class="text-[#E30613] no-underline">Início</a>
-                <a href="#" class="text-gray-700 no-underline hover:text-[#E30613]">O Clube</a>
-                <a href="#" class="text-gray-700 no-underline hover:text-[#E30613]">Equipas</a>
-            </nav>
-            <span class="text-sm font-bold text-gray-500"><i class="fa-solid fa-location-dot text-[#E30613] mr-1"></i> Olivais</span>
+    <header>
+        <div class="nav-container">
+            <div style="display: flex; align-items: center;">
+                <a href="#" class="logo-box">SLO</a>
+                <span class="club-name">SL OLIVAIS</span>
+            </div>
+            <span style="color: #666; font-weight: bold; font-size: 14px;"><i class="fa-solid fa-location-dot text-vermelho"></i> Olivais</span>
         </div>
     </header>
 
     <!-- HERO -->
-    <section class="hero-bg text-white py-24 text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight uppercase m-0">Sport Lisboa<br><span class="text-[#E30613]">e Olivais</span></h1>
-            <p class="text-gray-300 mt-4 text-lg">Painel de Informações Oficiais</p>
-        </div>
+    <section class="hero-bg">
+        <h1>Sport Lisboa<br><span class="text-vermelho">e Olivais</span></h1>
+        <p style="color: #ccc; margin-top: 10px;">Painel de Informações Oficiais</p>
     </section>
 
-    <!-- PAINEL DINÂMICO DO GOOGLE SHEETS -->
-    <section class="container mx-auto px-4 -mt-12 relative z-10 max-w-4xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+        <div class="grid-jogos">
             <!-- Próximo Jogo -->
-            <div class="bg-white rounded-xl shadow-xl border-t-4 border-[#E30613] p-8 text-center">
-                <span class="text-xs font-extrabold uppercase tracking-wider text-[#E30613] bg-red-50 px-3 py-1 rounded inline-block mb-4"><i class="fa-solid fa-calendar mr-1"></i> Próximo Jogo</span>
-                <p id="txt-proximo" class="text-xl font-bold text-gray-800 py-2 my-0">A carregar...</p>
+            <div class="card card-proximo">
+                <span class="badge badge-vermelho"><i class="fa-solid fa-calendar"></i> Próximo Jogo</span>
+                <p id="txt-proximo" class="dinamico-txt">A carregar...</p>
             </div>
 
             <!-- Último Resultado -->
-            <div class="bg-[#1A1A1A] text-white rounded-xl shadow-xl p-8 text-center">
-                <span class="text-xs font-extrabold uppercase tracking-wider text-green-400 bg-green-950 px-3 py-1 rounded inline-block mb-4"><i class="fa-solid fa-circle-check mr-1"></i> Último Resultado</span>
-                <p id="txt-resultado" class="text-3xl font-black text-[#E30613] py-2 my-0">A carregar...</p>
+            <div class="card card-ultimo">
+                <span class="badge badge-verde"><i class="fa-solid fa-circle-check"></i> Último Resultado</span>
+                <p id="txt-resultado" class="resultado-txt">A carregar...</p>
             </div>
         </div>
 
         <!-- NOTÍCIA DESTAQUE -->
-        <div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-[#E30613] mt-6">
-            <span class="text-xs font-extrabold uppercase tracking-wider text-gray-400 block mb-2">Última Notícia</span>
-            <p id="txt-noticia" class="text-xl font-bold text-gray-700 my-0">A carregar...</p>
+        <div class="card-noticia">
+            <span class="noticia-label">Último Destaque</span>
+            <p id="txt-noticia" style="font-size: 18px; font-weight: bold; margin: 5px 0 0 0; color: #333;">A carregar...</p>
         </div>
-    </section>
+    </main>
 
-    <!-- SCRIPT DE LIGAÇÃO AUTOMÁTICA -->
+    <!-- LIGAÇÃO COM GOOGLE SHEETS -->
     <script>
-        // COLA AQUI O LINK DO TEU GOOGLE SHEETS ENTRE AS ASPAS:
+        // REEMPLAZA ESTO CON TU ENLACE DE GOOGLE SHEETS DIRECTAMENTE
         const urlFolha = "https://docs.google.com/spreadsheets/d/1-dxdO3YCs-xeMJA9O7MHfWPg6UwIGDrZb1X6koaLyhQ/edit?gid=0#gid=0";
 
         async function obterDados() {
             try {
                 const matches = urlFolha.match(/\/d\/([^/]+)/);
                 if (!matches) {
-                    document.getElementById("txt-proximo").innerText = "Falta configurar o link do Sheets";
+                    document.getElementById("txt-proximo").innerText = "Link do Sheets não configurado";
                     return;
                 }
                 const id = matches[1];
-                const urlJson = `https://google.com{id}/gviz/tq?tqx=out:json`;
+                // Formato CSV directo, mucho más estable y rápido
+                const urlCsv = `https://google.com{id}/export?format=csv`;
                 
-                const res = await fetch(urlJson);
+                const res = await fetch(urlCsv);
                 const text = await res.text();
-                const json = JSON.parse(text.substring(47, text.length - 2));
-                const row = json.table.rows[0].c;
                 
-                if(row[0]) document.getElementById("txt-proximo").innerText = row[0].v;
-                if(row[1]) document.getElementById("txt-resultado").innerText = row[1].v;
-                if(row[2]) document.getElementById("txt-noticia").innerText = row[2].v;
+                // Dividir filas y columnas del CSV de forma segura
+                const linhas = text.split("\n");
+                if(linhas.length > 1) {
+                    // Limpiar las comillas que Google Sheets añade automáticamente
+                    const dados = linhas[1].split(",").map(item => item.replace(/^"|"$/g, '').trim());
+                    
+                    if(dados[0]) document.getElementById("txt-proximo").innerText = dados[0];
+                    if(dados[1]) document.getElementById("txt-resultado").innerText = dados[1];
+                    if(dados[2]) document.getElementById("txt-noticia").innerText = dados[2];
+                }
             } catch (e) {
-                console.error("Erro a ler o Google Sheets:", e);
-                document.getElementById("txt-proximo").innerText = "Erro ao carregar dados";
+                console.error("Erro:", e);
+                document.getElementById("txt-proximo").innerText = "Erro ao ler a tabela";
+                document.getElementById("txt-resultado").innerText = "0 - 0";
+                document.getElementById("txt-noticia").innerText = "Sem ligação ao Sheets";
             }
         }
         obterDados();
